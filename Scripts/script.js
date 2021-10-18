@@ -43,8 +43,8 @@ document.querySelector('.filter-completed').addEventListener('click', (e) => {
 document.querySelector('.dark-light').addEventListener('click', (e) => {
   if (e.target.innerHTML == 'light_mode') {
     e.target.innerHTML = 'dark_mode';
-    document.querySelector('.background').style.backgroundImage =
-      'url(../images/bg-desktop-dark.jpg)';
+    document.querySelector('.bg').classList.add('background_1');
+    document.querySelector('.bg').classList.remove('background_2');
     document.body.classList.add('dark');
     document.body.classList.remove('light');
     document.querySelector('.todo-form').classList.remove('light_2');
@@ -56,8 +56,8 @@ document.querySelector('.dark-light').addEventListener('click', (e) => {
     });
   } else {
     e.target.innerHTML = 'light_mode';
-    document.querySelector('.background').style.backgroundImage =
-      'url(../images/bg-desktop-light.jpg)';
+    document.querySelector('.bg').classList.add('background_2');
+    document.querySelector('.bg').classList.remove('background_1');
     document.body.classList.add('light');
     document.body.classList.remove('dark');
     document.querySelector('.todo-form').classList.add('light_2');

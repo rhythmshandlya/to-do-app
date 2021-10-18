@@ -21,7 +21,7 @@ body{
 }
 .light{
     color: #181824;
-    background-color:hsl(236, 33%, 92%) ;
+    background-color:#fafafa;
 }
 .dark i{
     color: white;
@@ -31,7 +31,7 @@ body{
 }
 .light_2{
     color: #25273c !important;
-    background-color: hsl(236, 33%, 92%) !important;
+    background-color: #ffffff !important;
 }
 
 i{
@@ -49,16 +49,29 @@ input:focus{
     background-color: inherit;
     border: none;
 }
-.background{
-    width: 100%;
+.background_1{
     height: 250px;
-    background-image: url(../images/bg-desktop-dark.jpg);
+    background-image: url('../images/dark.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+.background_2{
+    height: 250px;
+    background-image: url('../images/light.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
 }
 .todo-list{
     max-width: 650px;
     margin: 0 auto;
     position: relative;
-        bottom: 150px;
+        bottom: 110px;
 }
 .todo-header{
     display: flex;
@@ -84,7 +97,7 @@ input:focus{
     color: white;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
-    caret-color: rgb(148, 148, 155);
+    caret-color: #ffffff;
 }
 .todo{
     padding: 15px 20px;
@@ -94,7 +107,7 @@ input:focus{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid rgb(75, 75, 75);
 }
 .todo input{
     opacity: 1;
