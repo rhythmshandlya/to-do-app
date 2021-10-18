@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.ns{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.dark{
+    color: hsl(236, 33%, 92%) ;
+    background-color:  #181824;
+}
+.light{
+    color: #181824;
+    background-color:hsl(236, 33%, 92%) ;
+}
+.dark i{
+    color: white;
+}
+.light i{
+    color: black;
+}
+.light_2{
+    color: #25273c !important;
+    background-color: hsl(236, 33%, 92%) !important;
+}
+
+i{
+    cursor: pointer;
+    size: 10px;
+}
+
+input:focus{
+    outline: none;
+}
+.hide{
+    display: none !important;
+}
+.btn {
+    background-color: inherit;
+    border: none;
+}
+.background{
+    width: 100%;
+    height: 250px;
+    background-image: url(../images/bg-desktop-dark.jpg);
+}
+.todo-list{
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+        bottom: 150px;
+}
+.todo-header{
+    display: flex;
+    justify-content: space-around;
+    font-weight: 400;
+}
+.todo-title{
+    display: inline-block;
+}
+.todo-form{
+    margin: 3% 10%;
+    background-color: #25273c;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.todo-input{
+    width: 90%;
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #25273c;
+    color: white;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    caret-color: rgb(148, 148, 155);
+}
+.todo{
+    padding: 15px 20px;
+    width: 70%;
+    margin: 5px auto;
+    background-color:#25273c;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+.todo input{
+    opacity: 1;
+    cursor: pointer;
+}
+.todo label{
+    position: relative;
+    margin-left: 15px;
+    display: inline-block;
+}
+.todo i{
+    margin-left: auto;
+}
+.footer{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+.footer span{
+    cursor: pointer;
+    padding: 10px;
+}
+.footer span:hover{
+    color: skyblue;
+}
+.selected{
+    color: skyblue;
+}
+

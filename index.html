@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./Stylesheets/style.global.css" />
+    <title>Todo app</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+    </style>
+  </head>
+  <body class="dark ns">
+    <div class="background"></div>
+    <div class="todo-list">
+      <div class="todo-header">
+        <h2 class="todo-title">T O D O</h2>
+        <button class="btn" style="margin-top: 5px">
+          <i class="material-icons dark-light">dark_mode</i>
+        </button>
+      </div>
+      <form class="todo-form">
+        <input
+          type="text"
+          class="todo-input"
+          autocomplete="false"
+          autofocus="true"
+          placeholder="Create a new todo"
+          value=""
+        />
+        <button class="btn send" type="submit">
+          <i class="material-icons">send</i>
+        </button>
+      </form>
+      <div class="todos">
+        <!--
+              <div class="todo">
+                <input type="checkbox" name="todo" id="" />
+                <label for="todo">Finish all assignments and projects</label>
+                <i class="material-icons">delete</i>
+              </div>
+        -->
+      </div>
+      <div class="footer">
+        <span class="items-left selected">0 total</span>
+        <span class="all selected">all</span>
+        <span class="filter-active">active</span>
+        <span class="filter-completed">completed</span>
+        <span class="delete">clear complete</span>
+      </div>
+    </div>
+    <script src="./Scripts/script.js"></script>
+  </body>
+</html>
