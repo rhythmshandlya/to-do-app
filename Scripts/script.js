@@ -16,6 +16,7 @@ document.querySelector('.all').addEventListener('click', (e) => {
     listItem.classList.remove('hide');
   });
 });
+
 document.querySelector('.filter-active').addEventListener('click', (e) => {
   changeToBlue('filter-active');
   let todoList = document.querySelectorAll('.todo');
@@ -43,8 +44,10 @@ document.querySelector('.filter-completed').addEventListener('click', (e) => {
 document.querySelector('.dark-light').addEventListener('click', (e) => {
   if (e.target.innerHTML == 'light_mode') {
     e.target.innerHTML = 'dark_mode';
+
     document.querySelector('.bg').classList.add('background_1');
     document.querySelector('.bg').classList.remove('background_2');
+
     document.body.classList.add('dark');
     document.body.classList.remove('light');
     document.querySelector('.todo-form').classList.remove('light_2');
@@ -78,7 +81,7 @@ document.querySelector('.todo-form').addEventListener('submit', (e) => {
   }
   let newElement = document.createElement('div');
   let pName = document.body.classList.contains('light') ? 'light_2' : '';
-  newElement.setAttribute('class', `todo active ${pName}`);
+  newElement.setAttribute('class', `todo active ${pName} animate__animated animate__fadeInLeft`);
   newElement.innerHTML = `<input type="checkbox" name="todo" id="" /> <label for="todo">${val}</label> <i class="material-icons">delete</i>`;
   document.querySelector('.todos').append(newElement);
   var allTodos = document.querySelectorAll('.todo');
@@ -88,20 +91,17 @@ document.querySelector('.todo-form').addEventListener('submit', (e) => {
   refreshActiveCount();
   formInput.value = '';
 });
-
 /*
   Utility Functions
 */
-const refreshActiveCount = () => {
-  let activeCountElement = document.querySelector('.items-left');
-  activeCountElement.innerHTML = activeCount + activeCountElement.innerHTML.slice(1);
-};
+
 const deleteTodo = (e) => {
   const todo = e.target.parentNode;
   todo.parentNode.removeChild(todo);
   activeCount--;
   refreshActiveCount();
 };
+
 const markTodoAsDone = (e) => {
   let checkBox = e.target;
   if (checkBox.checked == true) {
@@ -116,6 +116,12 @@ const markTodoAsDone = (e) => {
     checkBox.parentNode.querySelector('label').innerHTML = content;
   }
 };
+
+const refreshActiveCount = () => {
+  let activeCountElement = document.querySelector('.items-left');
+  activeCountElement.innerHTML = activeCount + activeCountElement.innerHTML.slice(1);
+};
+
 const changeToBlue = (ele) => {
   let btn = document.querySelectorAll('span');
   for (let x = 1; x <= 3; x++) {

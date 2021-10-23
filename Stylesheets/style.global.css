@@ -50,22 +50,12 @@ input:focus{
     border: none;
 }
 .background_1{
-    height: 250px;
-    background-image: url('../images/dark.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646;
+    height: 230px;
+    background-image: linear-gradient(to right, #bdc3c7  0%, #2c3e50 100%);
 }
 .background_2{
-    height: 250px;
-    background-image: url('../images/light.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646;
+    height: 230px;
+    background-image: linear-gradient(to right, #ee9ca7  0%, #ffdde1 100%);
 }
 .todo-list{
     max-width: 650px;
@@ -76,11 +66,12 @@ input:focus{
 .todo-header{
     display: flex;
     justify-content: space-around;
-    font-weight: 400;
+    font-size: 1.2rem;
 }
 .todo-title{
     display: inline-block;
 }
+
 .todo-form{
     margin: 3% 10%;
     background-color: #25273c;
@@ -97,7 +88,7 @@ input:focus{
     color: white;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
-    caret-color: #ffffff;
+    caret-color: rgb(175, 66, 66);
 }
 .todo{
     padding: 15px 20px;
@@ -108,6 +99,7 @@ input:focus{
     display: flex;
     align-items: center;
     border: 1px solid rgb(75, 75, 75);
+    animation-duration: 0.2s;
 }
 .todo input{
     opacity: 1;
@@ -140,3 +132,38 @@ input:focus{
     color: skyblue;
 }
 
+/* Check Box*/
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    display:inline-block;
+    width:16px;
+    height:16px;
+    padding:0px;
+    margin:0px;
+    margin-right:5px;
+    background:white;
+    border-radius:20px;
+    border:1px solid #ddd;
+    border: 1px solid #dee2e6;                                                
+    box-sizing:content-box;                                                   
+    line-height:16px;                                                         
+    vertical-align: sub;                                                      
+    position:relative;
+}                                                                             
+input[type='checkbox']:checked {                                     
+    border:1px solid  #55468c;                                                
+}                                                                             
+input[type='checkbox']:checked:after{                                
+  content:'';                                                                 
+  position: absolute;                                                         
+  width: 12px;                                                                
+  height: 12px;                                                               
+  border-radius: 12px;                                                         
+  background: #55468c;                                                        
+  top:50%;                                                                    
+  transform: translateY(-50%);                                                
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
