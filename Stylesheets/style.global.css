@@ -51,11 +51,11 @@ input:focus{
 }
 .background_1{
     height: 230px;
-    background-image: linear-gradient(to right, #bdc3c7  0%, #2c3e50 100%);
+    background-image: linear-gradient(to right, #09203F  0%, #2e4c6a 100%);
 }
 .background_2{
     height: 230px;
-    background-image: linear-gradient(to right, #ee9ca7  0%, #ffdde1 100%);
+    background-image: linear-gradient(to right, #ee9da8  0%, #ffdde1 100%);
 }
 .todo-list{
     max-width: 650px;
@@ -113,6 +113,13 @@ input:focus{
 .todo i{
     margin-left: auto;
 }
+.todo-dark:hover{
+    background-color: #193352 !important;
+}
+.todo-light:hover{
+    background-color: #facbd1!important;
+}
+
 .footer{
     width: 70%;
     margin: 0 auto;
