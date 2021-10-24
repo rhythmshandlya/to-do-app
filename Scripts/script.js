@@ -1,25 +1,27 @@
 let activeCount = 0;
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
 /*
   Event listeners
 */
-document.querySelector(".delete").addEventListener("click", () => {
-  document.querySelector(".todos").innerHTML = "";
+$(".delete").addEventListener("click", () => {
+  $(".todos").innerHTML = "";
   activeCount = 0;
   refreshActiveCount();
 });
 
-document.querySelector(".all").addEventListener("click", (e) => {
+$(".all").addEventListener("click", (e) => {
   changeToBlue("all");
-  let todoList = document.querySelectorAll(".todo");
+  let todoList = $$(".todo");
   todoList.forEach((listItem) => {
     listItem.classList.remove("hide");
   });
 });
 
-document.querySelector(".filter-active").addEventListener("click", (e) => {
+$(".filter-active").addEventListener("click", (e) => {
   changeToBlue("filter-active");
-  let todoList = document.querySelectorAll(".todo");
+  let todoList = $$(".todo");
   todoList.forEach((listItem) => {
     if (!listItem.classList.contains("active")) {
       listItem.classList.add("hide");
@@ -29,9 +31,9 @@ document.querySelector(".filter-active").addEventListener("click", (e) => {
   });
 });
 
-document.querySelector(".filter-completed").addEventListener("click", (e) => {
+$(".filter-completed").addEventListener("click", (e) => {
   changeToBlue("filter-completed");
-  let todoList = document.querySelectorAll(".todo");
+  let todoList = $$(".todo");
   todoList.forEach((listItem) => {
     if (listItem.classList.contains("active")) {
       listItem.classList.add("hide");
@@ -41,16 +43,16 @@ document.querySelector(".filter-completed").addEventListener("click", (e) => {
   });
 });
 
-document.querySelector(".dark-light").addEventListener("click", (e) => {
+$(".dark-light").addEventListener("click", (e) => {
   if (e.target.innerHTML == "light_mode") {
     e.target.innerHTML = "dark_mode";
-    document.querySelector(".bg").classList.add("background_1");
-    document.querySelector(".bg").classList.remove("background_2");
+    $(".bg").classList.add("background_1");
+    $(".bg").classList.remove("background_2");
     document.body.classList.add("dark");
     document.body.classList.remove("light");
-    document.querySelector(".todo-form").classList.remove("light_2");
-    document.querySelector(".todo-input").classList.remove("light_2");
-    const todoList = document.querySelectorAll(".todo");
+    $(".todo-form").classList.remove("light_2");
+    $(".todo-input").classList.remove("light_2");
+    const todoList = $$(".todo");
     todoList.forEach((todo) => {
       console.log(todo.classLis);
       todo.classList.remove("light_2");
@@ -59,13 +61,13 @@ document.querySelector(".dark-light").addEventListener("click", (e) => {
     });
   } else {
     e.target.innerHTML = "light_mode";
-    document.querySelector(".bg").classList.add("background_2");
-    document.querySelector(".bg").classList.remove("background_1");
+    $(".bg").classList.add("background_2");
+    $(".bg").classList.remove("background_1");
     document.body.classList.add("light");
     document.body.classList.remove("dark");
-    document.querySelector(".todo-form").classList.add("light_2");
-    document.querySelector(".todo-input").classList.add("light_2");
-    const todoList = document.querySelectorAll(".todo");
+    $(".todo-form").classList.add("light_2");
+    $(".todo-input").classList.add("light_2");
+    const todoList = $$(".todo");
     todoList.forEach((todo) => {
       todo.classList.add("light_2");
       todo.classList.remove("todo-dark");
@@ -74,7 +76,7 @@ document.querySelector(".dark-light").addEventListener("click", (e) => {
   }
 });
 
-document.querySelector(".todo-form").addEventListener("submit", (e) => {
+$(".todo-form").addEventListener("submit", (e) => {
   e.preventDefault();
   let formInput = e.target.querySelector("input");
   let val = formInput.value;
@@ -90,8 +92,8 @@ document.querySelector(".todo-form").addEventListener("submit", (e) => {
     `todo active ${pName} animate__animated animate__fadeInLeft`
   );
   newElement.innerHTML = `<input type="checkbox" name="todo" id="" /> <label for="todo">${val}</label> <i class="material-icons">delete</i>`;
-  document.querySelector(".todos").append(newElement);
-  var allTodos = document.querySelectorAll(".todo");
+  $(".todos").append(newElement);
+  var allTodos = $$(".todo");
   allTodos[allTodos.length - 1]
     .querySelector("i")
     .addEventListener("click", deleteTodo);
@@ -129,13 +131,13 @@ const markTodoAsDone = (e) => {
 };
 
 const refreshActiveCount = () => {
-  let activeCountElement = document.querySelector(".items-left");
+  let activeCountElement = $(".items-left");
   activeCountElement.innerHTML =
     activeCount + activeCountElement.innerHTML.slice(1);
 };
 
 const changeToBlue = (ele) => {
-  let btn = document.querySelectorAll("span");
+  let btn = $$("span");
   for (let x = 1; x <= 3; x++) {
     if (btn[x].classList.contains(ele)) {
       btn[x].classList.add("selected");
