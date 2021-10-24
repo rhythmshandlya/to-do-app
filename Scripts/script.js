@@ -44,10 +44,8 @@ document.querySelector(".filter-completed").addEventListener("click", (e) => {
 document.querySelector(".dark-light").addEventListener("click", (e) => {
   if (e.target.innerHTML == "light_mode") {
     e.target.innerHTML = "dark_mode";
-
     document.querySelector(".bg").classList.add("background_1");
     document.querySelector(".bg").classList.remove("background_2");
-
     document.body.classList.add("dark");
     document.body.classList.remove("light");
     document.querySelector(".todo-form").classList.remove("light_2");

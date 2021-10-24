@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--prettier-ignore-->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./Stylesheets/style.global.css" />
     <title>Todo app</title>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/todo-icon.png"
-    />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,500;0,600;1,100;1,500&display=swap");
-    </style>
+    <link rel="icon" type="image/png" sizes="50x50" href="./images/todo-icon.png"/>
   </head>
+
+  <!--
+    1. 'dark' to toggle dark and light mode for most elements
+    2. 'ns' for not allowing selection with the mouse
+  -->
   <body class="dark ns">
-    <!-- div for background -->
+    <!-- Empty div for background gradient-->
     <div class="bg background_1"></div>
 
+    <!-- applications main container-->
     <div class="todo-list">
-      <!-- header title and btn -->
+      <!-- header title and btn display-type:flex-->
       <div class="todo-header">
         <h2 class="todo-title">T O D O</h2>
-        <button class="btn" style="margin-top: 5px">
-          <i class="material-icons dark-light">dark_mode</i>
-        </button>
+        <i class="material-icons dark-light">dark_mode</i>
       </div>
-
+      <!--Form to take task as input display-type:flex-->
       <form class="todo-form">
         <input
           type="text"
@@ -46,21 +36,24 @@
           placeholder="Create a new todo"
           value=""
         />
-        <button class="btn send" type="submit">
-          <i class="material-icons">send</i>
+        <button class="send" type="submit">
+          <i class="material-icons" style="color: rgb(94, 94, 94)">send</i>
         </button>
       </form>
 
+      <!-- We will append all our tasks in this div -->
       <div class="todos">
         <!--
+            This is how a task looks like!
               <div class="todo">
-                <input type="checkbox" name="todo" id="" />
+                <input type="checkbox" name="todo todo-dark" id="" />
                 <label for="todo">Finish all assignments and projects</label>
                 <i class="material-icons">delete</i>
               </div>
         -->
       </div>
 
+      <!--Span for footer <display-type:flex> -->
       <div class="footer">
         <span class="items-left selected">0 total</span>
         <span class="all selected">all</span>
